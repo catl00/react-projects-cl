@@ -8,6 +8,9 @@ const Quiz = () => {
     const [quizState, dispatch] = useContext(QuizContext);
     const apiUrl = 'https://opentdb.com/api.php?amount=10&category=31&type=multiple';
 
+    // The useEffect hook is used to fetch the questions from the API when the component mounts. 
+    // It will only fetch the questions if there are no questions in the state and there is no error. 
+    // If there are questions or an error, it will not fetch the questions again.
     useEffect(() => {
         if (quizState.questions.length > 0 || quizState.error) {
             return;
