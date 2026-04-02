@@ -1,5 +1,6 @@
 import Loader from '../Components/Loader';
 import ProductCard from '../Components/ProductCard';
+import SeriesCard from '../Components/SeriesCard';
 import { useHttpRequest } from '../Hooks/HttpRequests';
 
 function Home() {
@@ -19,19 +20,44 @@ function Home() {
     }
 
     if (products.data) {
-        content =
-            products.data.map((product) => (
-                <div key={product.id}>
-                    <ProductCard 
-                        product = {product}
-                    />
-                </div>
-            ))
+        // Aggregate unique series and pick a representative product for each series
+        const seriesMap = {};
+        products.data.forEach((p) => {
+            if (!seriesMap[p.series]) {
+                seriesMap[p.series] = { representative: p, count: 0 };
+            }
+            seriesMap[p.series].count += 1;
+        });
+
+        const seriesList = Object.keys(seriesMap).map((k) => {
+            const rep = seriesMap[k].representative;
+            // Prefer explicit seriesImage if present in the JSON
+            const representative = {
+                ...rep,
+                images: rep.seriesImage || rep.images || rep.image || rep.imageUrl || ''
+            };
+            return ({
+                series: k,
+                representative,
+                count: seriesMap[k].count,
+            })
+        });
+
+        // Only show the two series and display them in a responsive two-column grid
+        content = (
+            <div className='mt-4 grid grid-cols-1 md:grid-cols-2 gap-6'>
+                {seriesList.slice(0, 3).map((s) => (
+                    <div key={s.series} className='w-full'>
+                        <SeriesCard product={s.representative} count={s.count} />
+                    </div>
+                ))}
+            </div>
+        );
     }
     
     return (
         <div>
-            <h1 className='font-bold text-2xl'>Series 1</h1>
+            <h1 className='font-bold text-2xl text-center'>Smiski Series</h1>
             {content}
         </div>
     );

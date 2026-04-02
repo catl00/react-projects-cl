@@ -2,8 +2,8 @@
 
 const ProductCard = (props) => {
     return (
-        <div className='border mb-4 rounded overflow-hidden p-3'>
-            <Link to={`/products/${props.product.id}`}>
+        <div className='overflow-hidden p-3'>
+            <div>    
                 {/** normalize possible image fields from the JSON: imageUrl | image | images */}
                 {(() => {
                     const img = props.product.imageUrl || props.product.image || props.product.images || '';
@@ -19,24 +19,23 @@ const ProductCard = (props) => {
                         />
                     )
                 })()}
-            </Link>
+            </div>
             <div className='p-3'>
                 <div className='font-bold text-xl mb-3'>
-                    <Link to={`/products/${props.product.id}`}>
-                        {props.product.name}
-                    </Link>
-                </div>
-                <div className='font-bold text-xl mb-3'>
-                    ${props.product.price}
+                    {props.product.name}
                 </div>
                 <div>
                     {props.product.description}
                 </div>
-                <Link to={`/products/${props.product.id}`}
-                    className='bg-green-500 text-white p-2 flex justify-center mt-3'
-                >
-                        View
-                </Link>
+                <div className='flex justify-center p-3'>
+                    <p className='p-3 text-grey-400'>How many do you own?</p>
+                    <input
+                        type="number"
+                        min="1"
+                        defaultValue="0"
+                        className='border p-2 rounded w-12 mr-2 rounded-full text-center'
+                    />
+                </div>
             </div>
         </div>
     )
