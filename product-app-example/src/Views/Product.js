@@ -53,9 +53,6 @@ function Product() {
                         ) : null;
                     })()}
                 </div>
-                <div className='font-bold text-xl mb-3 text-center'>
-                    ${product.data.price}
-                </div>
                 <div className='text-center'>
                     {product.data.description}
                 </div>
