@@ -1,6 +1,7 @@
 {
-  "name": "about-me-website",
+  "name": "smiski-tracker",
   "version": "0.1.0",
+  "description": "Smiski Tracker app",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.2.0",

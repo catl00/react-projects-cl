@@ -1,3 +1,7 @@
+# Smiski Tracker
+
+This application is used to track how many smiskis you own based on Series. This is only a starting point as there are more series than shown on the application. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

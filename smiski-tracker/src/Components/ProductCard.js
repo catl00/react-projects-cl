@@ -28,12 +28,12 @@ const ProductCard = (props) => {
                     {props.product.description}
                 </div>
                 <div className='flex justify-center p-3'>
-                    <p className='p-3 text-grey-400'>How many do you own?</p>
+                    <p className='p-3 text-gray-500'>How many do you own?</p>
                     <input
                         type="number"
                         min="1"
                         defaultValue="0"
-                        className='border p-2 rounded w-12 mr-2 rounded-full text-center'
+                        className='border p-2 rounded w-14 mr-2 rounded-full text-center'
                     />
                 </div>
             </div>
