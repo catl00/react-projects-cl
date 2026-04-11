@@ -1,0 +1,58 @@
+.camera-icon {
+  font-size: 3rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.video, .border {
+  border: 50px solid #92b6f0; 
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #92b6f0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.App {
+  text-align: center;
+  font: calibri;
+}
+
+.App-header {
+  background-color: #a0bff0;
+  min-height: 100vh;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .camera-icon {
+    font-size: 2rem;
+  }
+
+  .button {
+    padding: 8px 16px;
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
