@@ -19,6 +19,7 @@ function ChatRoom() {
 
   const sendMessage = async (e) => {
     e.preventDefault();
+    if (!formValue.trim()) return; // don't send empty/whitespace-only messages
 
     const {uid, photoURL} = auth.currentUser;
     const userText = formValue;
@@ -46,7 +47,7 @@ function ChatRoom() {
         await messageRef.add({
           text: data.reply,
           uid: "bot",
-          photoURL: "https://api.dicebear.com/7.x/bottts/svg?seed=chatbot",
+          photoURL: "https://api.dicebear.com/10.x/sprouts/svg",
           createdAt: firebase.firestore.FieldValue.serverTimestamp()
         });
         dummy.current.scrollIntoView({ behavior: 'smooth' });
@@ -54,6 +55,14 @@ function ChatRoom() {
     } catch (error) {
       console.error("Error getting bot reply:", error);
     }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault(); // stop the newline from being added
+      sendMessage(e);     // submit the message instead
+    }
+    // if Shift+Enter, do nothing special — textarea naturally adds a line break
   };
 
   return (
@@ -64,7 +73,13 @@ function ChatRoom() {
         </main>
 
         <form onSubmit={sendMessage}>
-            <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Type here..."/>
+            <textarea
+              value={formValue}
+              onChange={(e) => setFormValue(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder="Type here..."
+              rows={1}
+            />
             <button type ="submit">Send</button>
         </form>
     </>

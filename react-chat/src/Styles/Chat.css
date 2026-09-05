@@ -1,3 +1,4 @@
+/* Base */
 * {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -6,18 +7,19 @@
   box-sizing: border-box;
 } 
 
-/* Screen background */
+/* Page background, behind the app */
 body {
   background-color: #11120D;
 }
 
-/* App container */
+/* App.js -> <div className="App">. Top-level wrapper for the whole chat app */
 .App {
   text-align: center;
   max-width: 728px;
   margin: 0 auto;
 }
 
+/* App.js -> <header> containing the title and SignOut button */
 .App header {
   background-color: #D8CFBC;
   height: 10vh;
@@ -31,11 +33,12 @@ body {
   align-items: center;
   justify-content: space-between;
   z-index: 99;
-  padding: 10px;
+  padding: 30px;
   box-sizing: border-box;
   font-size: 16px;
 }
 
+/* wraps the chatroom and sign-in */
 .App section {
   display: flex;
   flex-direction: column;
@@ -44,7 +47,7 @@ body {
   background-color: #565449;
 }
 
-/* chat room */
+/* ChatRoom.js -> <main> (scrollable message list)*/
 main {
   padding: 10px;
   height: 80vh;
@@ -52,20 +55,23 @@ main {
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
+  scroll-behavior: smooth; /* makes dummy.scrollIntoView() glide instead of jump */
 }
 
+/* custom scrollbar styles */
 main::-webkit-scrollbar {
   width: 0.25rem;
 }
 
 main::-webkit-scrollbar-track {
-  background: #1e1e24;
+  background: #7F9482;
 }
 
 main::-webkit-scrollbar-thumb {
-  background: #6649b8;
+  background: #7F9482;
 }
 
+/* ChatRoom.js -> <form> (message input bar, fixed to bottom) */
 form {
   height: 10vh;
   position: fixed;
@@ -76,13 +82,22 @@ form {
   font-size: 1.5rem;
 }
 
+/* ChatRoom.js -> <form> (message input bar, fixed to bottom) */
 form button {
   width: 20%;
   background-color: #11120D;
 }
 
+form button:hover:not(:disabled) {
+  background-color: #2a2b23;
+}
+ 
+form button:active:not(:disabled) {
+  transform: scale(0.96); /* small press-down feedback on click */
+}
 
-input {
+/* ChatRoom.js -> <input> (message input field) */
+textarea {
   line-height: 1.5;
   width: 100%;
   font-size: 20px;
@@ -90,9 +105,18 @@ input {
   color: #11120D;
   outline: none;
   border: none;
-  padding: 0 10px;
+  padding: 10px 16px;
+  transition: background-color 0.2s ease;
+  resize: none;  /* removes the manual resize handle */
+  font-family: inherit; /* textareas don't inherit font by default in some browsers */
+  max-height: 120px;   /* caps how tall it can grow */
+  overflow-y: auto;
 }
 
+/* 
+  Generic <button> base styles
+  Used by: ChatRoom.js Send button, SignIn.js, SignOut.js 
+*/
 button {
   background-color: #11120D; 
   border: none;
@@ -103,6 +127,7 @@ button {
   display: inline-block;
   cursor: pointer;
   font-size: 1.25rem;
+  transition: background-color 0.2s ease, transform 0.15s ease, opacity 0.2s ease;
 }
 
 button:disabled {
@@ -110,6 +135,7 @@ button:disabled {
   cursor: not-allowed;
 }
 
+/* SignIn.js -> <button onClick={signInWithGoogle}> */
 .sign-in-button {
   width: 35%;
   border-radius: 25px;
@@ -118,6 +144,12 @@ button:disabled {
   font-size: 20px;
 }
 
+.sign-in-button:hover {
+  background-color: #e9e1d1;
+  transform: translateY(-1px);
+}
+ 
+/* SignOut.js -> <button onClick={signOut}> */
 .sign-out-button {
   width: 25%;
   border-radius: 25px;
@@ -126,54 +158,78 @@ button:disabled {
   font-size: 20px;
 }
 
+.sign-out-button:hover {
+  background-color: #2a2b23;
+  transform: translateY(-1px);
+}
 
-
-/* ul, li {
-  text-align: left;
-  list-style: none;
-} */
-
-p {
+/* Message bubbles */
+.bubble {
   max-width: 500px;
   margin-bottom: 12px;
   line-height: 24px;
-  padding: 10px 20px;
-  border-radius: 25px;
+  padding: 10px 16px;
+  border-radius: 20px;
   position: relative;
   color: #fffbf4;
-  text-align: center;
+  text-align: left;
+  animation: messageIn 0.25s ease-out; /* plays once when a message first renders */
+  word-wrap: break-word;
 }
 
+
+/* 
+  ChatMessage.js -> outer wrapper <div className={messageClass}> 
+  Holds the avatar image + bubble together in a row 
+*/
 .message{
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  margin-bottom: 8px;
 }
 
-
+/* ChatMessage.js -> applied when uid === auth.currentUser.uid (your own messages) */
 .sent {
   flex-direction: row-reverse;
   display: flex;
+  align-items: flex-end;
 }
 
-.sent p {
+.sent .bubble {
   color: #11120D;
   background: #dbcfbc;
-  align-self: flex-end;
+  border-radius: 18px 18px 4px 18px; /* flat corner near the avatar, like iMessage */
 }
 
+/* ChatMessage.js -> applied when uid !== auth.currentUser.uid (bot / other users) */
 .received {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 
-.received p {
+.received .bubble {
   background: #D8CFBC;
   color: #11120D;
+  border-radius: 18px 18px 18px 4px; /* flat corner near the avatar, mirrored */
 }
 
+/* Fade + rise animation applied to every new .bubble on mount */
+@keyframes messageIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+ 
+/* ChatMessage.js -> <img src={photoURL} /> avatar next to each bubble */
 img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  margin: 2px 5px;
+  margin: 2px 8px;
+  flex-shrink: 0;
 }

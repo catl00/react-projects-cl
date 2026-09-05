@@ -8,9 +8,9 @@ function ChatMessage(props) {
     const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
     return (
-        <div className={messageClass}>
-            <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
-            <p>{text}</p>
+        <div className={`message ${messageClass}`}>
+            <img src={photoURL || 'https://api.dicebear.com/10.x/sprouts/svg'} />
+            <p className='bubble'>{text}</p>
         </div>
     )
 }
