@@ -1,0 +1,58 @@
+[
+ {
+   "Category": "Matcha",
+   "Title": "Matcha Latte",
+   "Description": "whisking ceremonial or culinary matcha powder with warm water and pouring it over milk and ice",
+   "Image": "matcha-lovers/src/assets/images/matchas/IcedMatchaLatte.jpg",
+   "Price": "$6.00"
+ },
+ {
+   "Category": "Matcha",
+   "Title": "Strawberry Matcha Latte",
+   "Description": "heavily layered drink featuring mashed strawberries or strawberry syrup paired with green tea and creamy milk",
+   "Image": "matcha-lovers/src/assets/images/matchas/StrawberryMatchaLatte.jpg",
+   "Price": "$7.50"
+ },
+ {
+   "Category": "Matcha",
+   "Title": "Dirty Matcha Latte",
+   "Description": "Classic Uji 6g Matcha latte topped with 1 Single Double Shot 18g - 2oz Medium Dark roast espresso.",
+   "Image": "matcha-lovers/src/assets/images/matchas/DirtyMatchaLatte.jpg",
+   "Price": "$7.00"
+ },
+ {
+   "Category": "Hojicha",
+   "Title": "Hojicha Latte",
+   "Description": "Whisked Uji Hojicha over milk, sweetened with house made simple syrup.",
+   "Image": "matcha-lovers/src/assets/images/hojichas/HojichaLatte.jpeg",
+   "Price": "$6.00"
+ },
+ {
+   "Category": "Hojicha",
+   "Title": "Iced Brown Sugar Hojicha Latte",
+   "Description": "Brown sugar molasses sweetened milk topped with whisked Uji region Hojicha",
+   "Image": "matcha-lovers/src/assets/images/hojichas/BlackSugarHojichaLatte-7.jpg",
+   "Price": "$7.00"
+ },
+ {
+   "Category": "Hojicha",
+   "Title": "Double Matcha (Hojicha + Matcha Cloud)",
+   "Description": "Toasted, earthy hojicha layered beneath a velvety, cold-whipped matcha foam for a rich study in contrasts.",
+   "Image": "matcha-lovers/src/assets/images/hojichas/HojichaLatteMatchaFoam.jpeg",
+   "Price": "$7.50"
+ },
+ {
+   "Category": "Sparkling",
+   "Title": "Spakling Matcha",
+   "Description": "Crisp, effervescent sparkling water infused with ceremonial matcha and a touch of citrus brightener.",
+   "Image": "matcha-lovers/src/assets/images/sparklings/SparklingMatcha.jpg",
+   "Price": "$7.00"
+ },
+ {
+   "Category": "Sparkling",
+   "Title": "Spakling Guava Matcha",
+   "Description": "Tropical pink guava nectar meets effervescent green tea for a sweet, refreshing, and vibrant iced refresher.",
+   "Image": "matcha-lovers/src/assets/images/sparklings/SparklingGuavaMatcha.jpeg",
+   "Price": "$7.00"
+ }
+]

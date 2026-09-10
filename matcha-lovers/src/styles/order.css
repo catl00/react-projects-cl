@@ -1,0 +1,170 @@
+/* ==========================================================================
+   MODAL OVERLAY & CARD CONTAINER
+   ========================================================================== */
+
+/* Dark screen backdrop */
+.modal-overlay {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Inner modal dialog card */
+.modal {
+    background-color: #e3e8d8;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 30px;
+    border: none;
+    width: 1026px;
+    height: 590px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    border-radius: 40px;
+}
+
+/* Close button (top right) */
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  font-size: 28px;
+  font-weight: bold;
+  color: #1F2D24;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.close:hover {
+  color: #7F9482;
+}
+
+/* ==========================================================================
+   SEARCH & HEADER SECTION
+   ========================================================================== */
+
+.search {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 15px;
+  justify-content: center;
+}
+
+.header {
+  color: #1F2D24;
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 50px;
+}
+
+.pvd-input {
+    padding: 50px 0;
+}
+/* ==========================================================================
+   PICKUP / DELIVERY TOGGLE BUTTONS
+   ========================================================================== */
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  /* margin-bottom: 1.5rem; */
+  padding: 30px 0;
+}
+
+.order-button {
+  background-color: #E5D2B8;
+  border: none;
+  color: #1F2D24;
+  /* padding: 12px 24px; */
+  width: 189px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-transform: lowercase;
+}
+
+.order-button:hover,
+.order-button-selected {
+  background-color: #D2AB80;
+  color: #F2EFE9;
+}
+
+
+/* ==========================================================================
+   LOCATION TEXT & INPUT FIELD
+   ========================================================================== */
+
+/* Label instruction text above input */
+.pvd-input p {
+    display: block;
+    width: 100%;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #1F2D24;
+    margin-bottom: 0.5rem;
+    padding-bottom: 10px;
+    text-transform: lowercase;
+    text-align: left;
+}
+
+/* Address/Location text input */
+.pvd-input[type="text"] {
+  width: 100%;
+  padding: 10px 4px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #1F2D24;
+  font-size: 16px;
+  color: #1F2D24;
+  box-sizing: border-box;
+}
+
+.pvd-inputinput[type="text"]:focus {
+  outline: none;
+  border-bottom-color: #7F9482;
+}
+
+.pvd-input input[type="text"]::placeholder {
+  color: #1F2D24;
+  text-transform: lowercase;
+}
+
+/* ==========================================================================
+   TARGET AUTOFILL inputs across WebKit/Blink browsers (Chrome, Safari, Edge)
+   ========================================================================== */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  /* Replace #e3e8d8 with your exact input background color */
+  -webkit-box-shadow: 0 0 0px 1000px #e3e8d8 inset !important;
+  
+  /* Retain your desired text color */
+  -webkit-text-fill-color: #1F2D24 !important;
+  
+  /* Retain transparent background timing if needed */
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* ==========================================================================
+   MAP
+   ========================================================================== */
+.map-container {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #1F2D24;
+  margin-top: 25px;
+}
