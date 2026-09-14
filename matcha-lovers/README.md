@@ -1,7 +1,3 @@
----
-Here is the full README text with the exact folder tree integrated:
-
-```markdown
 # 🍵 Matcha Lovers
 
 A modern React web application built with Vite — designed for ordering ahead, locating nearby store locations, and accessing rewards for matcha drinks.
@@ -57,7 +53,7 @@ npm run dev
 Open the local URL displayed in your terminal (usually http://localhost:5173) to view the app!
 
 📂 Project Structure
-Plaintext
+```
 matcha-lovers/
 ├── public/
 │   └── matcha logo.png      # Public static images and assets
@@ -88,3 +84,4 @@ matcha-lovers/
 ├── package.json             # Project dependencies and scripts
 ├── README.md                # Project documentation
 └── vite.config.js           # Vite build configuration
+```
