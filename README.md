@@ -11,6 +11,7 @@ A collection of personal React.js projects built to develop and demonstrate fron
 | **🌐 About Me Website** | Interactive portfolio highlighting personal projects and experience. | React.js, HTML5, CSS3 | 🚧 In Development |
 | **🧠 React Quiz** | Interactive quiz with real-time feedback and dynamic score updates. | React.js, `useState` | 🟢 Complete |
 | **💬 React Chat App** | Real-time chat app with Google Sign-In and an AI chatbot that replies automatically via Gemini. | React.js, Firebase (Auth/Firestore), Vercel Serverless, Gemini API | 🟢 Complete |
+| **💬 Matcha Lovers** | Matcha Cafe Ordering Application to view menu items | React.js, `useState`, CSS | 🚧 In Development |
 
 ---
 
@@ -22,6 +23,7 @@ git clone [https://github.com/catl00/react-projects-cl.git](https://github.com/c
 
 # Navigate into directory & install
 cd react-projects-cl
+cd '(project you want to view)'
 npm install
 
 # Run application
