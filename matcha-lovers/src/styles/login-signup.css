@@ -1,0 +1,232 @@
+/* ==========================================================================
+   FONTS
+   ========================================================================== */
+
+.ls-header {
+    color:#1F2D24;
+    font-size: 24px;
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+.sns-header {
+    color:#1F2D24;
+    font-size: 24px;
+    margin: 0;
+    padding: 20px 0;
+}
+
+span {
+    color:#1F2D24;
+    font-size: 20px;
+}
+
+p {
+    color:#1F2D24;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* ==========================================================================
+   MODAL & CONTAINER LAYOUT
+   ========================================================================== */
+.modal-overlay {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal {
+    background-color: #e3e8d8;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: none;
+    width: 1026px;
+    height: 590px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    border-radius: 40px;
+}
+
+.close {
+    right: 0;
+}
+
+.login {
+    width: 50%;
+    padding: 50px;
+    border-right: 3px solid #1F2D24;
+}
+
+.signup {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    padding: 30px;
+}
+
+/* ==========================================================================
+   LOG IN FORM & LABEL LAYOUT
+   ========================================================================== */
+
+form {
+  max-width: 700px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: #1F2D24; 
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+  text-transform: lowercase;
+}
+
+
+/* ==========================================================================
+   LOG IN TEXT & PASSWORD INPUT FIELD STYLES
+   ========================================================================== */
+
+.login input[type="text"],
+.login input[type="password"] {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 4px 0 ;
+  border: none;
+  border-bottom: 1px solid #1F2D24;
+  font-size: 18px;
+  color: #1F2D24;
+  background-color: #e3e8d8;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+}
+
+
+/* ==========================================================================
+   LOG IN PASSWORD SHOW/HIDE TOGGLE & ICON
+   ========================================================================== */
+
+.password-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-wrap input {
+  width: 100%;
+  padding-right: 2.5rem;
+  box-sizing: border-box;
+}
+
+#show-pass {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#show-pass img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* ==========================================================================
+   LOG IN & SIGN UP BUTTONS & LINKS
+   ========================================================================== */
+
+input[type="button"] {
+  background-color: #725C3A;
+  color: #F2EFE9;
+  font-weight: bold;
+  width: 189px;
+  height: 50px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  font-size: 20px;
+  align-self: center;
+  margin-top: 20px;
+}
+
+input[type="button"]:hover {
+  background-color: #D2AB80;
+}
+
+.text-link {
+  color: #1F2D24;
+  font-size: 14px;
+  display: inline-block; 
+  padding-top: 10px; 
+  align-self: flex-end;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 28px;
+  font-weight: bold;
+  color: #1F2D24;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.close:hover {
+  color: #7F9482;
+}
+
+/* ==========================================================================
+   SNS Icons
+   ========================================================================== */
+.sns {
+    padding-top: 15px;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+}
+
+.sns img {
+    width: 50px;
+    padding: 10px;
+}
+
+.matcha-logo {
+  width: 150px;
+  align-self: center;
+  padding-bottom: 1rem;
+  margin: 0;
+}
