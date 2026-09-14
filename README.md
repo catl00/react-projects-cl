@@ -11,7 +11,7 @@ A collection of personal React.js projects built to develop and demonstrate fron
 | **🌐 About Me Website** | Interactive portfolio highlighting personal projects and experience. | React.js, HTML5, CSS3 | 🚧 In Development |
 | **🧠 React Quiz** | Interactive quiz with real-time feedback and dynamic score updates. | React.js, `useState` | 🟢 Complete |
 | **💬 React Chat App** | Real-time chat app with Google Sign-In and an AI chatbot that replies automatically via Gemini. | React.js, Firebase (Auth/Firestore), Vercel Serverless, Gemini API | 🟢 Complete |
-| **💬 Matcha Lovers** | Matcha Cafe Ordering Application to view menu items | React.js, `useState`, CSS | 🚧 In Development |
+| **🍵 Matcha Lovers** | Matcha Cafe Ordering Application to view menu items | React.js, `useState`, CSS | 🚧 In Development |
 
 ---
 
