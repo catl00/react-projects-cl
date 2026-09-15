@@ -54,32 +54,46 @@ Open the local URL displayed in your terminal (usually http://localhost:5173) to
 ```
 matcha-lovers/
 ├── public/
-│   └── matcha logo.png      # Public static images and assets
+│   ├── images/
+│   │   ├── hojichas/         # Hojicha drink photos
+│   │   ├── matchas/          # Matcha drink photos
+│   │   ├── sparklings/       # Sparkling drink photos
+│   │   └── matcha logo.png   # Site logo
+│   └── json/
+│       └── menu.json         # Menu dataset configuration
 ├── src/
 │   ├── assets/
-│   │   ├── fonts/           # Custom font files
-│   │   └── images/          # UI icons and image assets (Google, Facebook, etc.)
+│   │   ├── fonts/
+│   │   │   └── fonts.css     # Custom font declarations
+│   │   └── images/           # UI icons (Google, Facebook, show/hide password, background)
 │   ├── components/
-│   │   ├── card.jsx         # Item card component for menu items
-│   │   ├── home.jsx         # Main home hero and landing sections
-│   │   ├── login-signup.jsx # Authentication modal component
-│   │   ├── menu.jsx         # Drink menu container component
-│   │   ├── navigation.jsx   # Top navigation bar component
-│   │   └── order.jsx        # Order modal component with Leaflet map
-│   ├── json/
-│   │   └── menu.json        # Menu dataset configuration
+│   │   ├── login-components/
+│   │   │   ├── login-signup.jsx    # Login/signup form component
+│   │   │   └── login-signup-m.jsx  # Login/signup modal wrapper
+│   │   ├── order-components/
+│   │   │   └── order.jsx     # Order modal component with Leaflet map
+│   │   ├── AppRouter.jsx     # Application routing configuration
+│   │   ├── card.jsx          # Item card component for menu items
+│   │   ├── home.jsx          # Main home hero and landing sections
+│   │   ├── menu-section.jsx  # Menu category section wrapper
+│   │   ├── menu.jsx          # Drink menu container component
+│   │   └── navigation.jsx    # Top navigation bar component
 │   ├── styles/
-│   │   ├── home.css         # Home section styles
-│   │   ├── login-signup.css # Login modal styles
-│   │   ├── navigation.css   # Navigation bar styles
-│   │   └── order.css        # Order modal & map container styles
-│   ├── App.jsx              # Main application root component
-│   ├── index.css            # Global CSS styles
-│   └── main.jsx             # Vite application entry point
-├── .gitignore               # Git ignore rules
-├── eslint.config.js         # ESLint configuration
-├── index.html               # Main HTML document shell
-├── package.json             # Project dependencies and scripts
-├── README.md                # Project documentation
-└── vite.config.js           # Vite build configuration
+│   │   ├── login-signups/
+│   │   │   ├── login-signup.css       # Login form styles
+│   │   │   └── login-signup-modal.css # Login modal overlay styles
+│   │   ├── orders/
+│   │   │   └── order.css     # Order modal & map container styles
+│   │   ├── card.css          # Menu card styles
+│   │   ├── home.css          # Home section styles
+│   │   └── navigation.css    # Navigation bar styles
+│   ├── App.jsx                # Main application root component
+│   ├── index.css               # Global CSS styles
+│   └── main.jsx                 # Vite application entry point
+├── .gitignore                    # Git ignore rules
+├── eslint.config.js              # ESLint configuration
+├── index.html                    # Main HTML document shell
+├── package.json                  # Project dependencies and scripts
+├── README.md                     # Project documentation
+└── vite.config.js                # Vite build configuration
 ```
