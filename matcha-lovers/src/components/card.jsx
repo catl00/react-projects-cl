@@ -1,12 +1,18 @@
+import '../styles/card.css'
 
 const Card = ({ image, title, description, price}) => {
     return (
         <div className="card">
-            <h3>{title}</h3>
-            <p>{description}</p>
-            <img src={image} alt="drink-image"/>
-            <p>{price}</p>
-            <button>add to cart</button>
+            <div className='content'>
+                <h3>{title}</h3>
+                <p className='card-price'>{price}</p>
+                <p>{description}</p>
+            </div>
+            <div className="image-wrapper">
+                <img src={image} alt="drink-image"/>
+            </div>
+            
+            <button className='card-button'>add to cart</button>
         </div>
     )
 }

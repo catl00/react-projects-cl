@@ -2,17 +2,16 @@
    FONTS
    ========================================================================== */
 
-.ls-header {
+.ls-header-m, .sns-header-m {
     color:#1F2D24;
     font-size: 24px;
+    font-weight: bold;
     margin: 0;
     padding-bottom: 50px;
+    padding-top: 0;
 }
 
-.sns-header {
-    color:#1F2D24;
-    font-size: 24px;
-    margin: 0;
+.sns-header-m {
     padding: 20px 0;
 }
 
@@ -31,9 +30,9 @@ p {
    MODAL & CONTAINER LAYOUT
    ========================================================================== */
 .modal-overlay {
-    display: block;
+    display: flex;
     position: fixed;
-    z-index: 1;
+    z-index: 9999;
     left: 0;
     top: 0;
     width: 100%;
@@ -43,28 +42,31 @@ p {
 }
 .modal {
     background-color: #e3e8d8;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 0 auto; /* Centering handled by flexbox on overlay */
     padding: 20px;
     border: none;
-    width: 1026px;
+    width: 90%; /* Keeps it responsive on smaller screens */
+    max-width: 1026px; /* Caps maximum width at original design spec */
     height: 590px;
+    max-height: 90vh; /* Prevents overflow on smaller vertical viewports */
     position: relative;
     display: flex;
     flex-direction: row;
     border-radius: 40px;
+    box-sizing: border-box;
 }
 
 .close {
     right: 0;
 }
 
-.login {
+.login-m {
     width: 50%;
     padding: 50px;
     border-right: 3px solid #1F2D24;
 }
 
-.signup {
+.signup-m {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -124,14 +126,14 @@ input[type="password"]:focus {
    LOG IN PASSWORD SHOW/HIDE TOGGLE & ICON
    ========================================================================== */
 
-.password-wrap {
+.password-wrap-m {
   position: relative;
   display: flex;
   align-items: center;
   width: 100%;
 }
 
-.password-wrap input {
+.password-wrap-m input {
   width: 100%;
   padding-right: 2.5rem;
   box-sizing: border-box;
@@ -184,7 +186,7 @@ input[type="button"]:hover {
   background-color: #D2AB80;
 }
 
-.text-link {
+.text-link-m {
   color: #1F2D24;
   font-size: 14px;
   display: inline-block; 
@@ -208,23 +210,23 @@ input[type="button"]:hover {
 }
 
 /* ==========================================================================
-   SNS Icons
+   Icons & Images
    ========================================================================== */
-.sns {
+.sns-m {
     padding-top: 15px;
 }
 
-.icons {
+.icons-m {
     display: flex;
     justify-content: center;
 }
 
-.sns img {
+.sns-m img {
     width: 50px;
-    padding: 10px;
+    height: 50px;
 }
 
-.matcha-logo {
+.matcha-logo-m {
   width: 150px;
   align-self: center;
   padding-bottom: 1rem;

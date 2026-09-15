@@ -2,8 +2,6 @@
 
 A modern React web application built with Vite — designed for ordering ahead, locating nearby store locations, and accessing rewards for matcha drinks.
 
-*Note: This application is actively under development.*
-
 ---
 
 ## ✨ Features

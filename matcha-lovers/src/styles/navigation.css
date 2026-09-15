@@ -1,0 +1,53 @@
+* {
+    margin:0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Pushes brand to left and buttons to right */
+    align-items: center;
+    background-color: #1F2D24;
+    margin: 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem 2rem; /* Adds breathing room around edges */
+}
+
+.nav-brand {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: #F2EFE9; /* Ensures text is visible */
+}
+
+.nav-brand img {
+    width: 104px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.button-container button {
+    background-color: #725C3A;
+    color: #F2EFE9;
+    font-weight: bold;
+    width: 189px;
+    height: 50px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 20px;
+    /* Removed margin-top: 20px so buttons center vertically */
+}
+
+.brand-title {
+    cursor: pointer;
+}
