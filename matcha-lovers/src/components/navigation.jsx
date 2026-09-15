@@ -1,59 +1,59 @@
 import "../styles/navigation.css";
+import { useNavigate, Outlet } from "react-router-dom";
 import { useState } from "react";
+
+// 1. Import your modal component (adjust path if needed)
+import LoginModal from "../components/login-components/login-signup-m"; 
+import Order from "../components/order-components/order";
 
 function Navigation() {
     const logo = {
-        src: "../public/matcha logo.png",
+        src: "images/matcha logo.png",
         alt: "Matcha Lovers Logo",
-        height: "80px",
-        width: "1040px",
     };
 
-    const [selectedNavItem, setSelectedNavItem] = useState(items[0]);
-
-    function handleNavItemClick(item) {
-        setSelectedNavItem(item);
-    }
-
-    // Displaying Order Now Modal
+    // Modal Display State
     const [showOrderModal, setShowOrderModal] = useState(false);
+    const [showLoginModal, setShowLoginModal] = useState(false);
 
-    const toggleOrderModal = () => {
-        setShowOrderModal(!showOrderModal);
-    };
-
-    const [showLoginModal, setLoginModal] = useState(false);
-
-    const loginModalClickHandler = () => {
-        setLoginModal(!showLoginModal);
-    };
+    const navigate = useNavigate();
 
     return (
         <>
-            <h1>Matcha Lovers </h1>
             <nav>
-                <Image src={logo.src} alt={logo.alt} height={logo.height} width={logo.width} />
-                <button
-                    className="login-button"
-                    type="button"
-                    onClick={loginModalClickHandler}
-                >
-                    Log In | Sign Up
-                </button>
-                {/* <button type="button" onClick={toggleOrderModal}>
-                    Order Now
-                </button> */}
-            </nav>
-            {/* <Outlet /> */}
-            {/* <OrderNow
-                show={showOrderModal}
-                close={toggleOrderModal}
-                // imageURL="/images/background_noodle.png"
-            /> */}
-            <Login/>
-        </>
-    )
+                {/* Brand and Logo */}
+                <div className="nav-brand" onClick={() => navigate('/')}>
+                    <img src={logo.src} alt={logo.alt}/>
+                    <h1 className="brand-title">matcha lovers </h1>
+                </div>
 
+                {/* Modal Buttons */} 
+                <div className="button-container">
+                    {/* 2. Changed onClick to update internal state directly */}
+                    <button className="home-button" onClick={() => setShowLoginModal(true)}>
+                        log in | sign up
+                    </button>
+                    
+                    <button className="home-button" onClick={() => setShowOrderModal(true)}>
+                        order now
+                    </button>
+                </div>
+            </nav>
+
+            {/* Renders the current page route */}
+            <Outlet />
+
+            {/* Conditional Modal Renderings */}
+            {/* 3. Fixed onClose to set showLoginModal to false */}
+            {showLoginModal && (
+                <LoginModal onClose={() => setShowLoginModal(false)} />
+            )}
+
+            {showOrderModal && (
+                <Order onClose={() => setShowOrderModal(false)} />
+            )}
+        </>
+    );
 }
 
 export default Navigation;

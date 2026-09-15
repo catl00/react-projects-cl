@@ -1,19 +1,12 @@
-import {useState} from "react";
-import '../styles/login-signup.css';
-import googleImg from '../assets/images/google-plus.png';
-import facebookImg from '../assets/images/facebook.png';
-import viewImg from '../assets/images/view.png';
-import hideImg from '../assets/images/hide.png';
+// src/components/auth/LoginModal.jsx
+import { useState } from 'react';
+import '../../styles/login-signups/login-signup-modal.css';
+import googleImg from '../../assets/images/google-plus.png';
+import facebookImg from '../../assets/images/facebook.png';
+import viewImg from '../../assets/images/view.png';
+import hideImg from '../../assets/images/hide.png';
 
-/**
- * 
- * @component This component renders the login and signip modal for the Matcha Lovers application. 
- * It includes a form for users to enter their username and password or use social media to login. 
- * Additionally, it provides a link for users who do not have an account to sign up. 
- * 
- */
-
-function LoginSignup( { show, close }) {
+function LoginModal( { onClose }) {
     const [showPass, setShowPass] = useState(false);
 
     /**
@@ -25,19 +18,15 @@ function LoginSignup( { show, close }) {
         setShowPass(!showPass);
     };
 
-    if (!show) {
-        return <></>;
-    }
-
 
     return (
         <div>
-            <div className="modal-overlay">
-                <div className="modal">
-                    <span on onClick={close} className="close"> &times; </span>
+            <div className="modal-overlay" onClick={onClose}>
+                <div className="modal" onClick={(e) => e.stopPropagation()}>
+                    <span on onClick={onClose} className="close"> &times; </span>
                     {/* component for user to log in their existing acccount */}
-                    <div className="login">
-                        <h2 className="ls-header">log in to your account</h2>
+                    <div className="login-m">
+                        <h2 className="ls-header-m">log in to your account</h2>
                         <form>
                             {/* email field */}
                             <label htmlFor="email">
@@ -47,7 +36,7 @@ function LoginSignup( { show, close }) {
                             {/* password field */}
                             <label htmlFor="password">
                                 <span>password</span>
-                                <div className="password-wrap">
+                                <div className="password-wrap-m">
                                     <input type={showPass ? "text" : "password"}/>
                                     <button type="button" id="show-pass" onClick={togglePW}>
                                         <img
@@ -57,15 +46,15 @@ function LoginSignup( { show, close }) {
                                         />
                                     </button>
                                 </div>
-                                <a href="" className="text-link"> forgot password? </a>
+                                <a href="" className="text-link-m"> forgot password? </a>
                             </label>
                             {/* login button */}
                             <input type="button" value="log in" id="log-in" />
                         </form>
                         {/* log in via social media */}
-                        <div className="sns">
-                            <h2 className="sns-header">login using social accounts</h2>
-                            <div className="icons">
+                        <div className="sns-m">
+                            <h2 className="sns-header-m">login using social accounts</h2>
+                            <div className="icons-m">
                                 <a href="">
                                     <img src={googleImg} alt="google-plus-logo"/>
                                 </a>
@@ -77,9 +66,9 @@ function LoginSignup( { show, close }) {
                         </div>
                     </div>
                     {/* sign up */}
-                    <div className="signup">
-                        <h2 className="ls-header">new?</h2>
-                        <img src="/matcha logo.png" alt="matcha-logo" className="matcha-logo"/>
+                    <div className="signup-m">
+                        <h2 className="ls-header-m">new?</h2>
+                        <img src="images/matcha logo.png" alt="matcha-logo" className="matcha-logo-m"/>
                         <p>sign up and order ahead!</p>
                         <input type="button" value="sign up" id="sign-up" />
                     </div> 
@@ -89,4 +78,4 @@ function LoginSignup( { show, close }) {
     );
 }
 
-export default LoginSignup;
+export default LoginModal;

@@ -1,0 +1,56 @@
+{
+  "matcha": [
+    {
+      "Title": "Matcha Latte",
+      "Description": "whisking ceremonial or culinary matcha powder with warm water and pouring it over milk and ice",
+      "Image": "/images/matchas/IcedMatchaLatte.jpg",
+      "Price": "$6.00"
+    },
+    {
+      "Title": "Strawberry Matcha Latte",
+      "Description": "heavily layered drink featuring mashed strawberries or strawberry syrup paired with green tea and creamy milk",
+      "Image": "/images/matchas/StrawberryMatchaLatte.jpg",
+      "Price": "$7.50"
+    },
+    {
+      "Title": "Dirty Matcha Latte",
+      "Description": "classic uji 6g matcha latte topped with 1 single double shot 18g - 2oz medium dark roast espresso.",
+      "Image": "/images/matchas/DirtyMatchaLatte.jpg",
+      "Price": "$7.00"
+    }
+  ],
+  "hojicha": [
+    {
+      "Title": "Hojicha Latte",
+      "Description": "whisked uji hojicha over milk, sweetened with house made simple syrup.",
+      "Image": "/images/hojichas/HojichaLatte.jpeg",
+      "Price": "$6.00"
+    },
+    {
+      "Title": "Iced Brown Sugar Hojicha Latte",
+      "Description": "brown sugar molasses sweetened milk topped with whisked uji region hojicha",
+      "Image": "/images/hojichas/BlackSugarHojichaLatte-7.jpg",
+      "Price": "$7.00"
+    },
+    {
+      "Title": "Double Matcha (Hojicha + Matcha Cloud)",
+      "Description": "toasted, earthy hojicha layered beneath a velvety, cold-whipped matcha foam for a rich study in contrasts.",
+      "Image": "/images/hojichas/HojichaLatteMatchaFoam.jpeg",
+      "Price": "$7.50"
+    }
+  ],
+  "sparkling": [
+    {
+      "Title": "Spakling Matcha",
+      "Description": "crisp, effervescent sparkling water infused with ceremonial matcha and a touch of citrus brightener.",
+      "Image": "/images/sparklings/SparklingMatcha.jpg",
+      "Price": "$7.00"
+    },
+    {
+      "Title": "Spakling Guava Matcha",
+      "Description": "tropical pink guava nectar meets effervescent green tea for a sweet, refreshing, and vibrant iced refresher.",
+      "Image": "/images/sparklings/SparklingGuavaMatcha.jpeg",
+      "Price": "$7.00"
+    }
+  ]
+}

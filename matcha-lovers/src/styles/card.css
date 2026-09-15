@@ -1,0 +1,173 @@
+h2 {
+    color: #F2EFE9;
+    font-weight: 300;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 32px;
+}
+
+.fyi {
+    color: #F2EFE9;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   CONTAINER
+   ========================================================================== */
+
+.section-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center; /* Centers rows with 1 or 2 items */
+    align-items: stretch;
+    padding: 0 5%;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   CARD DESIGN (Identical Card Widths)
+   ========================================================================== */
+
+.card {
+    /* Set a explicit fixed max-width so 2-item rows match 3-item rows */
+    width: calc(33.333% - 1.33rem); 
+    max-width: 340px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E3E8D8;
+    padding: 24px;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+    transition-duration: 0.4s;
+}
+
+/* ==========================================================================
+   CARD CONTENT & TYPOGRAPHY
+   ========================================================================== */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    /* 1. Allows the content box to expand and fill space above the image */
+    flex-grow: 1; 
+    
+    /* 2. Sets a min-height to absorb 1-line vs 2-line title differences */
+    min-height: 150px; 
+    box-sizing: border-box;
+}
+
+.content h3 {
+    font-size: clamp(18px, 1.8vw, 24px); /* Scales up to 24px max */
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    color: #1F2D24;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.content p {
+    color: #1F2D24;
+    font-size: clamp(13px, 1.2vw, 16px); /* Scales up to 16px max */
+    margin: 0 0 0.5rem 0;
+    line-height: 1.35;
+    text-align: center;
+}
+
+.card .card-price {
+    font-weight: bold;
+    font-size: clamp(14px, 1.4vw, 18px);
+    color: #1F2D24;
+    /* margin-top: 1rem; */
+    /* margin-bottom: 1rem; */
+}
+
+/* ==========================================================================
+   IMAGE WRAPPER
+   ========================================================================== */
+
+.image-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Clean square aspect ratio */
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+    margin-top: auto;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* ==========================================================================
+   BUTTON DESIGN (Width: 189px, Height: 50px, Font: 20px)
+   ========================================================================== */
+
+.card-button {
+    background-color: #6B5536;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 25px;
+    
+    /* Dimensions locked at 189px width x 50px height */
+    max-width: 189px;
+    max-height: 50px;
+    width: 100%;
+    height: 50px;
+    
+    /* Font size capped at 20px */
+    font-size: clamp(14px, 1.5vw, 20px);
+    font-weight: 700;
+    padding: 0;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.card-button:hover {
+    background-color: #544229;
+}
+
+.card-button:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .section-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 360px;
+    }
+}
