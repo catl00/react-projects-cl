@@ -1,0 +1,189 @@
+/* Projects Card */
+
+.projects, .future {
+    flex: 1;
+    background: var(--color-card);
+    border-radius: var(--card-radius);
+    padding: 25px 25px;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.projects h1, .future h1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 20px;
+}
+
+/* Projects */
+.tech-stack {
+    padding-bottom: 50px;
+}
+
+.notes {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 20px 0;
+}
+
+.notes p {
+    font-size: 16px;
+    margin: 0;
+    /* margin-bottom: 10px; */
+    text-align: center;
+}
+
+.project-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    width: 100%;
+}
+
+.projects h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.mockup:hover {
+    transform: scale(1.1);
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.project-details {
+    flex: 0 0 calc(50% - 12px); 
+    box-sizing: border-box;
+}
+
+.project-details h3 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.project-details p {
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.links{
+    text-align: center;
+}
+
+.project-details a {
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-text-dark);
+}
+.project-details a:hover {
+    color: #8EB1D1;
+}
+
+/* mockups */
+.mockup {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden; /* Clips image corners to match frame */
+  border: 1px solid rgba(0, 0, 0, 0.15); /* Defines edge boundary */
+  background: #e9ecef;
+}
+
+.browser-header {
+  height: 26px;
+  background: #e9ecef;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 6px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.browser-header .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: static;
+    flex: 0 0 8px;
+}
+.browser-header .dot.red { background: #ff5f56; }
+.browser-header .dot.yellow { background: #ffbd2e; }
+.browser-header .dot.green { background: #27c93f; }
+
+/* Image Container with tight cropping & aspect ratio lock */
+.thumbnail-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.project-ss {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Crops image cleanly without stretching */
+    object-position: top center; /* Focuses on top header/hero UI */
+    transition: transform 0.3s ease;
+}
+
+.thumbnail-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.project-card:hover .project-ss {
+  transform: scale(1.05);
+}
+
+/* Side Bar */
+.sidebar {
+    width: 403px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Future Skills Card */
+.future ul {
+  margin: 0 0 20px;
+  padding-left: 20px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+    .projects h1, .future h1 {
+        font-size: 22px;
+    }
+
+    .projects h2 {
+        font-size: 20px;
+    }
+
+    .project-columns {
+        gap: 20px;
+    }
+
+    .project-details {
+        flex-basis: 100%;
+    }
+
+    .project-details h3 {
+        font-size: 18px;
+    }
+
+    .project-details p {
+        font-size: 16px;
+    }
+
+    .mockup:hover {
+        transform: none;
+    }
+}

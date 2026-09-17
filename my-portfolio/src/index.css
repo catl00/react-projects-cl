@@ -1,0 +1,155 @@
+:root {
+  --color-bg: #8eb1d1;
+  --color-card: #E8ECEF;
+  --color-text-light: #f7fbfe;
+  --color-text-dark: #1c2b48;
+  --color-button: #a7c7e7;
+  --color-progress-track: #c4d8e5;
+  --card-radius: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  cursor: default;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, Roboto, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+}
+
+.page {
+  width: 100%;
+  max-width: 1440px;
+  padding: 33px 92px 40px;
+  margin: 0 auto; /* Horizontally centers block elements */
+}
+
+.content {
+  display: flex;
+  align-items: stretch;
+  gap: 30px;
+  margin: 50px auto 0 auto; /* Added 'auto' to left/right margins to center horizontally */
+  width: 100%;
+  max-width: 1250px; /* Restrict max-width so it leaves side margins on wide screens */
+  
+}
+
+/* Action Buttons */
+.actions {
+  background: var(--color-card);
+  border-radius: var(--card-radius);
+  padding: 69px 98px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+button {
+  width: 200px;
+  height: 50px;
+  border-radius: 50px;
+  background: var(--color-button);
+  color: var(--color-text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  border: none;
+}
+
+.button a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+}
+
+button:hover {
+    background-color: #8EB1D1;
+}
+
+@media (max-width: 1024px) {
+  .page {
+    padding: 24px 32px 32px;
+  }
+
+  .nav-links {
+    width: auto;
+    font-size: 24px;
+  }
+
+  .content {
+    flex-direction: column;
+    width: calc(100% - 48px);
+    max-width: 900px;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 20px;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+  }
+
+  .content {
+    width: calc(100% - 32px);
+    margin-top: 28px;
+    gap: 20px;
+  }
+
+  .about, .experience, .projects, .contact, .future, .skills {
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .about, .sidebar, .projects, .experience, .contact {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .actions {
+    padding: 32px 20px;
+  }
+
+  button {
+    width: 150px;
+    font-size: 14px;
+  }
+
+  footer {
+    padding: 24px 16px;
+    gap: 12px;
+  }
+}
