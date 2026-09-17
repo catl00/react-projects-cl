@@ -1,5 +1,8 @@
 import '../styles/homepage.css'
 import { useNavigate } from 'react-router-dom';
+import Cinnamoroll from '../assets/Cinnamoroll.jpg';
+import Miffy from '../assets/Miffy.jpg';
+import HelloKitty from '../assets/Hello Kitty.png';
 
 function HomePage() {
     const navigate = useNavigate();
@@ -19,9 +22,9 @@ function HomePage() {
                     and functional behind the scenes.
                 </p>
                 <div className='images'>
-                    <img src="./src/assets/Cinnamoroll.jpg" alt="Cinnamoroll"/>
-                    <img src='./src/assets/Miffy.jpg' alt="Miffy"/>
-                    <img src='./src/assets/Hello Kitty.png' alt="Hello Kitty"/>
+                    <img src={Cinnamoroll} alt="Cinnamoroll"/>
+                    <img src={Miffy} alt="Miffy"/>
+                    <img src={HelloKitty} alt="Hello Kitty"/>
                 </div>
                 <p className='fyi'>Photos are not mine. No Copyright Infringement Intended.</p>
                 
