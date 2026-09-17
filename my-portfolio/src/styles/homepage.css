@@ -1,0 +1,65 @@
+/* About Card */
+.about, .key-points {
+    flex: 1;
+    background: var(--color-card);
+    border-radius: var(--card-radius);
+    padding: 25px 25px;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.about h1, .key-points h1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 20px;
+}
+
+.about p {
+    padding: 0 40px;
+}
+
+/* images */
+.images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 50px 0 50px;
+}
+
+.images img {
+    width: 200px;
+    height: 200px;
+    aspect-ratio: 1 / 1;
+}
+
+.fyi {
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Side Bar */
+.sidebar {
+    width: 403px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Key Point Card */
+.key-points h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    font-style: italic;
+}
+
+.key-point ul {
+  margin: 0 0 20px;
+  padding-left: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
