@@ -1,5 +1,3 @@
-#### 1. `Photobooth Cute / README.md`
-
 # 📸 Photobooth Cute
 
 An accessible, browser-based photobooth web application that captures camera feeds and generates customizable photo strips directly in the browser.
